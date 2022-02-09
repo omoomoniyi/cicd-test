@@ -17,10 +17,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-
+    
     steps:
     - uses: actions/checkout@v2
 
@@ -37,7 +34,7 @@ jobs:
         arguments: build
 
     - name: Build and Push Docker Image    
-      uses: mr-smithers-excellent/docker-build-push@v5
+      uses: mr-smithers-excellent/docker-build-push@v4
       with:
         image: omoomoniyi/mplify
         registry: docker.io
